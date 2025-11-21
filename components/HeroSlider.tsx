@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 interface Slide {
   id: number
@@ -48,7 +49,7 @@ export default function HeroSlider() {
             index === currentSlide ? 'opacity-100' : 'opacity-0'
           }`}
         >
-          <img src={slide.image} alt={slide.title} className="w-full h-full object-cover" />
+          <Image src={slide.image} alt={slide.title} fill className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/40"></div>
         </div>
       ))}

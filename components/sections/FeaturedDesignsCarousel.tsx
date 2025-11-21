@@ -1,12 +1,13 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 
 export default function FeaturedDesignsCarousel() {
   const [activeCategory, setActiveCategory] = useState('All')
   const [isPaused, setIsPaused] = useState(false)
   const [currentIndex, setCurrentIndex] = useState(0)
-  const [selectedDesign, setSelectedDesign] = useState(null)
+  const [selectedDesign, setSelectedDesign] = useState<any>(null)
 
   const designs = [
     { title: 'Royal Bridal Lehenga', tags: ['Bridal', 'Ethnic'], image: 'https://res.cloudinary.com/dh9uxczld/image/upload/v1763719670/royal-bridal-lehenga_rr1pjv.png', price: '25000', description: 'Exquisite royal bridal lehenga crafted with traditional embroidery and zari work. Perfect for your special day with luxurious fabric and intricate detailing.' },
@@ -74,11 +75,14 @@ export default function FeaturedDesignsCarousel() {
               {filteredDesigns.map((design, index) => (
                 <div key={index} className="w-1/3 flex-shrink-0 px-4">
                   <div className="rounded-lg overflow-hidden bg-white border border-gray-200 hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer h-full">
-                    <img 
-                      src={design.image} 
-                      alt={design.title}
-                      className="w-full h-64 object-contain"
-                    />
+                    <div className="relative w-full h-64">
+                      <Image 
+                        src={design.image} 
+                        alt={design.title}
+                        fill
+                        className="w-full h-64 object-contain"
+                      />
+                    </div>
                     <div className="p-6">
                       <h3 className="text-lg font-semibold text-[#8B3A62] mb-3">{design.title}</h3>
                       <div className="flex flex-wrap gap-2 mb-4">
@@ -137,11 +141,14 @@ export default function FeaturedDesignsCarousel() {
             </div>
 
             <div className="p-6">
-              <img 
-                src={selectedDesign.image} 
-                alt={selectedDesign.title}
-                className="w-full h-96 object-contain rounded-lg mb-6"
-              />
+              <div className="relative w-full h-96 mb-6">
+                <Image 
+                  src={selectedDesign.image} 
+                  alt={selectedDesign.title}
+                  fill
+                  className="w-full h-96 object-contain rounded-lg"
+                />
+              </div>
 
               <p className="text-gray-700 mb-6 leading-relaxed">
                 {selectedDesign.description}

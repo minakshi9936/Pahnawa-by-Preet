@@ -54,7 +54,7 @@ export default function Testimonials() {
                     <span key={i} className="text-[#D66B7F] text-xl">★</span>
                   ))}
                 </div>
-                <p className="text-gray-600 mb-6 italic">"{testimonial.text}"</p>
+                <p className="text-gray-600 mb-6 italic">&quot;{testimonial.text}&quot;</p>
                 <p className="font-semibold text-[#8B3A62]">- {testimonial.name}</p>
               </div>
             ))}
