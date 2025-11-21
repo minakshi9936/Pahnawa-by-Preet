@@ -14,10 +14,10 @@ export default function FeaturedDesignsCarousel() {
     { title: 'Light Weight Lehenga', tags: ['Fusion', 'Ethnic'], image: 'https://res.cloudinary.com/dh9uxczld/image/upload/v1763638854/IMG-20251120-WA0038_p7jgqz.jpg', price: '2500', description: 'Comfortable and stylish lightweight lehenga perfect for festivals and celebrations. Features fusion design with modern cuts.' },
     { title: 'Modern Fusion Suit', tags: ['Fusion', 'Contemporary'], image: 'https://res.cloudinary.com/dh9uxczld/image/upload/v1763638853/IMG-20251120-WA0042_byg6lz.jpg', price: '1500', description: 'Contemporary fusion suit blending traditional and modern aesthetics. Ideal for casual gatherings and parties.' },
     { title: 'Western Dresses', tags: ['Western', 'Custom'], image: 'https://res.cloudinary.com/dh9uxczld/image/upload/v1763638854/IMG-20251120-WA0040_ws3gxa.jpg', price: '5000', description: 'Elegant western dresses custom tailored to your preferences. Available in various styles and sizes.' },
-    { title: 'Party Wear Gown', tags: ['Western', 'Party'], image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRitQSpvymWr81yFRP3A11kqJEwDbee9dg5eg&s', price: '5000', description: 'Stunning party gown with elegant draping and sophisticated design. Perfect for evening events.' },
+    { title: 'Party Wear Gown', tags: ['Western', 'Party'], image: 'https://res.cloudinary.com/dh9uxczld/image/upload/v1763638854/IMG-20251120-WA0040_ws3gxa.jpg', price: '5000', description: 'Stunning party gown with elegant draping and sophisticated design. Perfect for evening events.' },
     { title: 'Ethnic Anarkali', tags: ['Ethnic', 'Casual'], image: 'https://res.cloudinary.com/dh9uxczld/image/upload/v1763638853/IMG-20251120-WA0041_khfzh9.jpg', price: '2000', description: 'Classic ethnic anarkali with comfortable fit and graceful silhouette. Great for casual celebrations.' },
     { title: 'Designer Blouse', tags: ['Blouse', 'Custom'], image: 'https://res.cloudinary.com/dh9uxczld/image/upload/v1763721449/designer-blouse_wfikgz.png', price: '1500', description: 'Custom designer blouse with intricate patterns and premium fabric. Pairs perfectly with any saree.' },
-    { title: 'Bridal Dupatta', tags: ['Bridal', 'Accessory'], image: 'https://www.koskii.com/cdn/shop/files/koskii-maroon-zariwork-net-designer-dupatta-durm0033649_maroon1_1.jpg?v=1708685680', price: '2000', description: 'Beautiful bridal dupatta with exquisite zari and embroidery work. The perfect finishing touch for your bridal ensemble.' },
+    { title: 'Bridal Dupatta', tags: ['Bridal', 'Accessory'], image: 'https://res.cloudinary.com/dh9uxczld/image/upload/v1763638853/IMG-20251120-WA0041_khfzh9.jpg', price: '2000', description: 'Beautiful bridal dupatta with exquisite zari and embroidery work. The perfect finishing touch for your bridal ensemble.' },
   ]
 
   const categories = ['All', 'Bridal', 'Ethnic', 'Traditional', 'Contemporary', 'Party', 'Casual']
@@ -168,7 +168,7 @@ export default function FeaturedDesignsCarousel() {
               </div>
 
               <a
-                href={`https://wa.me/919988776655?text=Hi! I'm interested in "${selectedDesign.title}". Could you provide more details or discuss customization options?`}
+                href={`https://wa.me/919569151037?text=Hi! I'm interested in "${selectedDesign.title}". Could you provide more details or discuss customization options?`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full bg-[#25D366] hover:bg-[#1da851] text-white font-bold py-3 px-6 rounded-lg flex items-center justify-center gap-2 transition-all"

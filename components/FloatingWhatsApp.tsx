@@ -1,0 +1,17 @@
+'use client'
+
+import { MessageCircle } from 'lucide-react'
+
+export default function FloatingWhatsApp() {
+  return (
+    <a
+      href="https://wa.me/919569151037?text=Hi! I'd like to know more about your services."
+      target="_blank"
+      rel="noopener noreferrer"
+      className="fixed bottom-6 right-6 z-40 w-14 h-14 bg-[#25D366] hover:bg-[#1da851] text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
+      aria-label="Contact us on WhatsApp"
+    >
+      <MessageCircle className="w-7 h-7" />
+    </a>
+  )
+}

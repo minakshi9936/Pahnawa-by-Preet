@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Footer() {
   return (
@@ -6,7 +7,9 @@ export default function Footer() {
       <div className="container max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div>
-            <h3 className="text-2xl font-bold text-[#D66B7F] mb-4">Pahnawa</h3>
+            <div className="mb-4">
+              <Image src="/pahnawa-logo1.png" alt="Pahnawa Logo" width={160} height={160} className="h-55 w-auto" />
+            </div>
             <p className="text-white mb-4">Your Partner in Exceptional Experiences</p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-[#D66B7F] transition-colors">
@@ -46,9 +49,9 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-4">Contact Info</h4>
             <ul className="space-y-2 text-white hover:text-black">
-              <li>Phone: +91 (XXX) XXX-XXXX</li>
-              <li>Email: info@pahnawa.com</li>
-              <li>Address: Boutique Plaza, New Delhi</li>
+              <li>Phone: +919569151037</li>
+              <li>Email: 9918196565preetibagga@gmail.com</li>
+              <li>Address: Shop No 225 Sahara Plaza Patrakarpuram Gomti Nagar Lucknow 226010, Lucknow</li>
               <li>Hours: Mon-Sun, 10AM - 8PM</li>
             </ul>
           </div>

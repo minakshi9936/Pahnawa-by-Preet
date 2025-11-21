@@ -128,7 +128,7 @@ export default function Contact() {
                     <span className="text-2xl mr-3">📍</span>
                     Location
                   </h3>
-                  <p className="text-gray-600">Boutique Plaza, New Delhi 110001</p>
+                  <p className="text-gray-600">Shop No 225 Sahara Plaza Patrakarpuram Gomti Nagar Lucknow 226010, Lucknow</p>
                 </div>
 
                 <div>
@@ -136,8 +136,8 @@ export default function Contact() {
                     <span className="text-2xl mr-3">📱</span>
                     Phone
                   </h3>
-                  <p className="text-gray-600">+91 (XXX) XXX-XXXX</p>
-                  <p className="text-gray-600">+91 (XXX) XXX-XXXX</p>
+                  <p className="text-gray-600">+919569151037</p>
+                  <p className="text-gray-600">+916306183542</p>
                 </div>
 
                 <div>
@@ -145,8 +145,8 @@ export default function Contact() {
                     <span className="text-2xl mr-3">📧</span>
                     Email
                   </h3>
-                  <p className="text-gray-600">info@pahnawa.com</p>
-                  <p className="text-gray-600">support@pahnawa.com</p>
+                  <p className="text-gray-600">9918196565preetibagga@gmail.com</p>
+                  
                 </div>
 
                 <div>

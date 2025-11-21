@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import FloatingWhatsApp from '@/components/FloatingWhatsApp'
 
 export const metadata: Metadata = {
   title: 'Pahnawa By Preets - Boutique Stitching & Designing',
@@ -27,6 +28,7 @@ export default function RootLayout({
       </head>
       <body>
         {children}
+        <FloatingWhatsApp />
       </body>
     </html>
   )

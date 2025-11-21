@@ -6,7 +6,14 @@ export default function CTA() {
         <p className="text-xl text-white mb-8 opacity-90">
           Let&apos;s bring your fashion dreams to life with Pahnawa By Preets
         </p>
-        <button className="btn-secondary">Book Your Appointment Today</button>
+        <a
+          href="https://wa.me/919569151037?text=Hi! I'd like to book an appointment for a consultation."
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-secondary"
+        >
+          Book Your Appointment Today
+        </a>
       </div>
     </section>
   )
