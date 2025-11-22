@@ -13,7 +13,7 @@ interface Slide {
 
 const slides: Slide[] = [
   { id: 1, title: 'Bridal Collections', image: 'https://res.cloudinary.com/dh9uxczld/image/upload/v1763638854/IMG-20251120-WA0039_dr7jak.jpg', href: '/boutique' },
-  { id: 2, title: 'Designer Lehengas', image: 'https://res.cloudinary.com/dh9uxczld/image/upload/v1763638853/IMG-20251120-WA0041_khfzh9.jpg', href: '/designers' },
+  { id: 2, title: 'Designer Lehengas', image: 'https://res.cloudinary.com/dh9uxczld/image/upload/v1763638853/IMG-20251120-WA0041_khfzh9.jpg', href: '/boutique' },
   { id: 3, title: 'Custom Stitching', image: 'https://res.cloudinary.com/dh9uxczld/image/upload/v1763638854/IMG-20251120-WA0038_p7jgqz.jpg', href: '/services' },
   { id: 4, title: 'Ethnic Wear', image: 'https://res.cloudinary.com/dh9uxczld/image/upload/v1763638854/IMG-20251120-WA0040_ws3gxa.jpg', href: '/gallery' },
 ]
@@ -41,7 +41,7 @@ export default function HeroSlider() {
   }
 
   return (
-    <div className="relative w-full h-full bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden group">
+    <div className="relative w-full h-screen md:h-screen lg:h-screen bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden group">
       {slides.map((slide, index) => (
         <div
           key={slide.id}
@@ -56,7 +56,7 @@ export default function HeroSlider() {
 
       <button
         onClick={prevSlide}
-        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 bg-[#D66B7F] hover:bg-[#8B3A62] text-white p-3 md:p-4 rounded-full transition-colors"
+        className="hidden md:flex absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 bg-[#D66B7F] hover:bg-[#8B3A62] text-white p-3 md:p-4 rounded-full transition-colors"
         aria-label="Previous slide"
       >
         <svg className="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -66,7 +66,7 @@ export default function HeroSlider() {
 
       <button
         onClick={nextSlide}
-        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 bg-[#D66B7F] hover:bg-[#8B3A62] text-white p-3 md:p-4 rounded-full transition-colors"
+        className="hidden md:flex absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 bg-[#D66B7F] hover:bg-[#8B3A62] text-white p-3 md:p-4 rounded-full transition-colors"
         aria-label="Next slide"
       >
         <svg className="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">

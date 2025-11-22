@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     description: 'Your Partner in Exceptional Experiences. Premium custom clothing, bridal tailoring, and personalized fashion solutions.',
     url: 'https://pahnawa.com',
     type: 'website',
+    images: [
+      {
+        url: '/pahnawa-logo1.png',
+        width: 800,
+        height: 600,
+        alt: 'Pahnawa By Preets Logo',
+      },
+    ],
   },
 }
 

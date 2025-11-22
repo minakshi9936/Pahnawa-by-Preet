@@ -10,7 +10,7 @@ export default function Hero() {
   }
 
   return (
-    <section className="relative w-full h-64 sm:h-80 md:h-96 lg:h-screen bg-contain overflow-hidden">
+    <section className="relative w-full h-84 sm:h-90 md:h-99 lg:h-screen bg-contain overflow-hidden">
       <HeroSlider />
       <div className="absolute inset-0 bg-black/30"></div>
       <div className="absolute inset-0 flex flex-col items-center justify-center px-4 py-8 sm:py-12">
