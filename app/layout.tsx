@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: 'Pahnawa By Preets - Boutique Stitching & Designing',
   description: 'Your Partner in Exceptional Experiences. Premium custom clothing, bridal tailoring, and personalized fashion solutions.',
   keywords: 'boutique, stitching, tailoring, bridal wear, custom clothing, ethnic wear, designer consultation',
+  icons: {
+    icon: '/pahnawaa.jpg',
+  },
   openGraph: {
     title: 'Pahnawa By Preets - Boutique Stitching & Designing',
     description: 'Your Partner in Exceptional Experiences. Premium custom clothing, bridal tailoring, and personalized fashion solutions.',
@@ -13,7 +16,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/pahnawa-logo1.png',
+        url: '/pahnawaa.jpg',
         width: 800,
         height: 600,
         alt: 'Pahnawa By Preets Logo',
