@@ -59,7 +59,6 @@ export default function Pricing() {
     { service: 'Suits & Kurtas', price: '₹2,500 - ₹8,000' },
     { service: 'Designer Consultation (Per Hour)', price: '₹999 - ₹2,999' },
     { service: 'Alterations', price: '₹500 - ₹2,000' },
-    { service: 'Men\'s Ethnic Wear', price: '₹5,000 - ₹20,000' },
     { service: 'Premium Fabric Suggestion', price: 'Free' },
     { service: 'Rush Delivery (Extra)', price: '₹1,000 - ₹3,000' },
   ]
