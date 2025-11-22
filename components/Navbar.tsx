@@ -8,7 +8,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <nav className="bg-[#af0353] border-b border-gray-200 sticky top-0 z-50">
+    <nav className="bg-[#af0353] border-b border-gray-200 sticky top-0 z-50 h-20">
       <div className="container max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-center h-16 sm:h-20">
           <Link href="/" className="flex items-center flex-shrink-0">
