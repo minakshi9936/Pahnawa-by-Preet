@@ -3,14 +3,14 @@ import Image from 'next/image'
 
 export default function Footer() {
   return (
-    <footer className="bg-[#af0353] text-white py-12">
+    <footer className="bg-[#af0353] text-white py-8 sm:py-12">
       <div className="container max-w-7xl mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-8">
           <div>
             <div className="mb-4">
-              <Image src="/pahnawa-logo1.png" alt="Pahnawa Logo" width={160} height={160} className="h-55 w-auto" />
+              <Image src="/pahnawa-logo1.png" alt="Pahnawa Logo" width={160} height={160} className="h-55 sm:h-25 w-auto" />
             </div>
-            <p className="text-white mb-4">Your Partner in Exceptional Experiences</p>
+            <p className="text-sm sm:text-base text-white mb-4">Your Partner in Exceptional Experiences</p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-[#D66B7F] transition-colors">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -27,9 +27,10 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-4">Company</h4>
-            <ul className="space-y-2">
+            <h4 className="text-base sm:text-lg font-semibold mb-4">Company</h4>
+            <ul className="space-y-2 text-sm sm:text-base">
               <li><Link href="#WhyChoose" className="text-white hover:text-black transition-colors">About Us</Link></li>
+               <li><Link href="/boutique" className="text-white hover:text-black transition-colors">Boutique</Link></li>
               <li><Link href="/services" className="text-white hover:text-black transition-colors">Services</Link></li>
               <li><Link href="/gallery" className="text-white hover:text-black transition-colors">Gallery</Link></li>
               <li><Link href="/pricing" className="text-white hover:text-black transition-colors">Pricing</Link></li>
@@ -37,8 +38,8 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-4">Support</h4>
-            <ul className="space-y-2">
+            <h4 className="text-base sm:text-lg font-semibold mb-4">Support</h4>
+            <ul className="space-y-2 text-sm sm:text-base">
               <li><Link href="/faq" className="text-white hover:text-black transition-colors">FAQ</Link></li>
               <li><Link href="/contact" className="text-white hover:text-black transition-colors">Contact</Link></li>
               <li><Link href="/policies" className="text-white hover:text-black transition-colors">Policies</Link></li>
@@ -47,22 +48,22 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-4">Contact Info</h4>
-            <ul className="space-y-2 text-white hover:text-black">
+            <h4 className="text-base sm:text-lg font-semibold mb-4">Contact Info</h4>
+            <ul className="space-y-2 text-sm sm:text-base text-white hover:text-black">
               <li>Phone: +919569151037</li>
               <li>Email: 9918196565preetibagga@gmail.com</li>
-              <li>Address: Shop No 225 Sahara Plaza Patrakarpuram Gomti Nagar Lucknow 226010, Lucknow</li>
+              <li>Address: Shop No. 225 Sahara Plaza Patrakarpuram Gomti Nagar Lucknow 226010, Lucknow</li>
               <li>Hours: Mon-Sun, 10AM - 8PM</li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm mb-4 md:mb-0">© 2024 Pahnawa By Preets. All rights reserved.</p>
+       {/* <div className="border-t border-gray-700 pt-8 flex flex-col sm:flex-row justify-between items-center text-center sm:text-left">
+          <p className="text-gray-400 text-xs sm:text-sm mb-4 sm:mb-0">© 2024 Pahnawa By Preets. All rights reserved.</p>
           <Link href="/admin" className="text-gray-400 text-xs hover:text-[#D66B7F] transition-colors">
             Admin Panel
           </Link>
-        </div>
+        </div> */}
       </div>
     </footer>
   )

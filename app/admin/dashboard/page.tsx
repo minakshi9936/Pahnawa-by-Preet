@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation'
 
 export default function AdminDashboard() {
   const [activeTab, setActiveTab] = useState<string>('overview')
+  const [sidebarOpen, setSidebarOpen] = useState(false)
   const router = useRouter()
 
   const handleLogout = () => {
@@ -30,8 +31,19 @@ export default function AdminDashboard() {
 
   return (
     <div className="min-h-screen bg-gray-100">
+      <button
+        onClick={() => setSidebarOpen(!sidebarOpen)}
+        className="md:hidden fixed top-4 left-4 z-50 bg-[#8B3A62] text-white p-2 rounded-lg"
+      >
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
       <div className="flex">
-        <aside className="w-64 bg-[#8B3A62] text-white p-6 min-h-screen">
+        <aside className={`${
+          sidebarOpen ? 'translate-x-0' : '-translate-x-full'
+        } md:translate-x-0 fixed md:relative w-64 bg-[#8B3A62] text-white p-6 min-h-screen transition-transform z-40`}>
           <div className="mb-8">
             <h1 className="text-2xl font-bold text-[#D66B7F] mb-2">Pahnawa</h1>
             <p className="text-gray-400 text-sm">Admin Panel</p>
@@ -65,37 +77,37 @@ export default function AdminDashboard() {
           </div>
         </aside>
 
-        <main className="flex-1 p-8">
-          <div className="flex justify-between items-center mb-8">
-            <h1 className="text-4xl font-bold text-[#8B3A62]">Dashboard</h1>
-            <div className="flex items-center space-x-4">
+        <main className="flex-1 p-4 sm:p-6 md:p-8 mt-12 md:mt-0">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6 sm:mb-8">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#8B3A62]">Dashboard</h1>
+            <div className="flex items-center space-x-4 w-full sm:w-auto">
               <input
                 type="text"
                 placeholder="Search..."
-                className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-[#D66B7F]"
+                className="px-3 sm:px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-[#D66B7F] text-sm sm:text-base flex-1 sm:flex-none"
               />
             </div>
           </div>
 
           {activeTab === 'overview' && (
             <div>
-              <h2 className="text-2xl font-bold text-[#8B3A62] mb-6">Welcome to Admin Dashboard</h2>
+              <h2 className="text-xl sm:text-2xl font-bold text-[#8B3A62] mb-6">Welcome to Admin Dashboard</h2>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-6 sm:mb-8">
                 {stats.map((stat, idx) => (
-                  <div key={idx} className="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow">
+                  <div key={idx} className="bg-white rounded-lg p-4 sm:p-6 border border-gray-200 hover:shadow-lg transition-shadow">
                     <div className="flex items-center justify-between">
                       <div>
-                        <p className="text-gray-600 text-sm mb-1">{stat.label}</p>
-                        <p className="text-3xl font-bold text-[#8B3A62]">{stat.value}</p>
+                        <p className="text-gray-600 text-xs sm:text-sm mb-1">{stat.label}</p>
+                        <p className="text-2xl sm:text-3xl font-bold text-[#8B3A62]">{stat.value}</p>
                       </div>
-                      <div className="text-4xl">{stat.icon}</div>
+                      <div className="text-3xl sm:text-4xl">{stat.icon}</div>
                     </div>
                   </div>
                 ))}
               </div>
 
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
                 <div className="bg-white rounded-lg p-6 border border-gray-200">
                   <h3 className="font-bold text-[#8B3A62] mb-4">Recent Bookings</h3>
                   <div className="space-y-4">
@@ -195,20 +207,20 @@ export default function AdminDashboard() {
           )}
 
           {activeTab === 'gallery' && (
-            <div className="bg-white rounded-lg p-6 border border-gray-200">
-              <div className="flex justify-between items-center mb-6">
-                <h2 className="text-2xl font-bold text-[#8B3A62]">Manage Gallery</h2>
-                <button className="bg-[#D66B7F] text-white px-6 py-2 rounded-lg font-semibold hover:bg-[#8B3A62] transition-colors">
+            <div className="bg-white rounded-lg p-4 sm:p-6 border border-gray-200">
+              <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
+                <h2 className="text-xl sm:text-2xl font-bold text-[#8B3A62]">Manage Gallery</h2>
+                <button className="bg-[#D66B7F] text-white px-4 sm:px-6 py-2 rounded-lg font-semibold text-sm sm:text-base hover:bg-[#8B3A62] transition-colors">
                   + Upload Image
                 </button>
               </div>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-6">
                 {[...Array(8)].map((_, idx) => (
                   <div key={idx} className="bg-gray-200 rounded-lg aspect-square flex items-center justify-center group relative">
-                    <div className="text-4xl">🖼️</div>
+                    <div className="text-3xl sm:text-4xl">🖼️</div>
                     <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 rounded-lg transition-all flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100">
-                      <button className="text-white text-sm font-semibold">Edit</button>
-                      <button className="text-red-400 text-sm font-semibold">Delete</button>
+                      <button className="text-white text-xs sm:text-sm font-semibold">Edit</button>
+                      <button className="text-red-400 text-xs sm:text-sm font-semibold">Delete</button>
                     </div>
                   </div>
                 ))}

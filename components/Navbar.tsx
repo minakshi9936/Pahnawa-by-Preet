@@ -10,37 +10,37 @@ export default function Navbar() {
   return (
     <nav className="bg-[#af0353] border-b border-gray-200 sticky top-0 z-50">
       <div className="container max-w-7xl mx-auto px-4">
-        <div className="flex justify-between items-center h-20">
-          <Link href="/" className="flex items-center">
+        <div className="flex justify-between items-center h-16 sm:h-20">
+          <Link href="/" className="flex items-center flex-shrink-0">
             <Image
               src="/pahnawa-logo1.png"
               alt="Pahnawa By Preets"
               width={160}
               height={160}
-              className="h-45 w-auto"
+              className="h-55 sm:h-25 w-auto"
             />
           </Link>
 
-          <div className="hidden md:flex items-center space-x-8">
-            <Link href="/" className="text-white hover:text-black transition-colors">
+          <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
+            <Link href="/" className="text-white text-sm lg:text-base hover:text-black transition-colors">
               Home
             </Link>
-            <Link href="/boutique" className="text-white hover:text-black transition-colors">
+            <Link href="/boutique" className="text-white text-sm lg:text-base hover:text-black transition-colors">
               Boutique
             </Link>
-            <Link href="/services" className="text-white hover:text-black transition-colors">
+            <Link href="/services" className="text-white text-sm lg:text-base hover:text-black transition-colors">
               Services
             </Link>
-          {/*  <Link href="/designers" className="text-white hover:text-black transition-colors">
+          {/*  <Link href="/designers" className="text-white text-sm lg:text-base hover:text-black transition-colors">
               Designers
             </Link> */}
-            <Link href="/pricing" className="text-white hover:text-black transition-colors">
+            <Link href="/pricing" className="text-white text-sm lg:text-base hover:text-black transition-colors">
               Pricing
             </Link>
-            <Link href="/gallery" className="text-white hover:text-black transition-colors">
+            <Link href="/gallery" className="text-white text-sm lg:text-base hover:text-black transition-colors">
               Gallery
             </Link>
-            <Link href="/contact" className="text-white hover:text-black transition-colors">
+            <Link href="/contact" className="text-white text-sm lg:text-base hover:text-black transition-colors">
               Contact
             </Link>
           </div>
@@ -69,26 +69,26 @@ export default function Navbar() {
         </div>
 
         {isOpen && (
-          <div className="md:hidden pb-4 border-t border-gray-200">
-            <Link href="/" className="block py-2 text-white hover:text-black transition-colors">
+          <div className="md:hidden pb-4 border-t border-gray-200 bg-[#9a0242]">
+            <Link href="/" className="block py-3 px-2 text-white hover:bg-[#7d0135] transition-colors text-sm sm:text-base">
               Home
             </Link>
-            <Link href="/boutique" className="block py-2 text-white hover:text-black transition-colors">
+            <Link href="/boutique" className="block py-3 px-2 text-white hover:bg-[#7d0135] transition-colors text-sm sm:text-base">
               Boutique
             </Link>
-            <Link href="/services" className="block py-2 text-white hover:text-black transition-colors">
+            <Link href="/services" className="block py-3 px-2 text-white hover:bg-[#7d0135] transition-colors text-sm sm:text-base">
               Services
             </Link>
-            <Link href="/designers" className="block py-2 text-white hover:text-black transition-colors">
+           {/* <Link href="/designers" className="block py-3 px-2 text-white hover:bg-[#7d0135] transition-colors text-sm sm:text-base">
               Designers
-            </Link>
-            <Link href="/pricing" className="block py-2 text-white hover:text-black transition-colors">
+            </Link> */}
+            <Link href="/pricing" className="block py-3 px-2 text-white hover:bg-[#7d0135] transition-colors text-sm sm:text-base">
               Pricing
             </Link>
-            <Link href="/gallery" className="block py-2 text-white hover:text-black transition-colors">
+            <Link href="/gallery" className="block py-3 px-2 text-white hover:bg-[#7d0135] transition-colors text-sm sm:text-base">
               Gallery
             </Link>
-            <Link href="/contact" className="block py-2 text-white hover:text-black transition-colors">
+            <Link href="/contact" className="block py-3 px-2 text-white hover:bg-[#7d0135] transition-colors text-sm sm:text-base">
               Contact
             </Link>
           </div>

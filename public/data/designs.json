@@ -1,0 +1,76 @@
+{
+  "designs": [
+    {
+      "id": 1,
+      "title": "Royal Bridal Lehenga",
+      "tags": ["Bridal", "Ethnic"],
+      "image": "https://res.cloudinary.com/dh9uxczld/image/upload/v1763719670/royal-bridal-lehenga_rr1pjv.png",
+      "price": "25000",
+      "description": "Exquisite royal bridal lehenga crafted with traditional embroidery and zari work. Perfect for your special day with luxurious fabric and intricate detailing.",
+      "category": "bridal"
+    },
+    {
+      "id": 2,
+      "title": "Light Weight Lehenga",
+      "tags": ["Fusion", "Ethnic"],
+      "image": "https://res.cloudinary.com/dh9uxczld/image/upload/v1763638854/IMG-20251120-WA0038_p7jgqz.jpg",
+      "price": "2500",
+      "description": "Comfortable and stylish lightweight lehenga perfect for festivals and celebrations. Features fusion design with modern cuts.",
+      "category": "ethnic"
+    },
+    {
+      "id": 3,
+      "title": "Modern Fusion Suit",
+      "tags": ["Fusion", "Contemporary"],
+      "image": "https://res.cloudinary.com/dh9uxczld/image/upload/v1763638853/IMG-20251120-WA0042_byg6lz.jpg",
+      "price": "1500",
+      "description": "Contemporary fusion suit blending traditional and modern aesthetics. Ideal for casual gatherings and parties.",
+      "category": "party"
+    },
+    {
+      "id": 4,
+      "title": "Western Dresses",
+      "tags": ["Western", "Custom"],
+      "image": "https://res.cloudinary.com/dh9uxczld/image/upload/v1763638854/IMG-20251120-WA0040_ws3gxa.jpg",
+      "price": "5000",
+      "description": "Elegant western dresses custom tailored to your preferences. Available in various styles and sizes.",
+      "category": "party"
+    },
+    {
+      "id": 5,
+      "title": "Party Wear Gown",
+      "tags": ["Western", "Party"],
+      "image": "https://res.cloudinary.com/dh9uxczld/image/upload/v1763638854/IMG-20251120-WA0040_ws3gxa.jpg",
+      "price": "5000",
+      "description": "Stunning party gown with elegant draping and sophisticated design. Perfect for evening events.",
+      "category": "party"
+    },
+    {
+      "id": 6,
+      "title": "Ethnic Anarkali",
+      "tags": ["Ethnic", "Casual"],
+      "image": "https://res.cloudinary.com/dh9uxczld/image/upload/v1763638853/IMG-20251120-WA0041_khfzh9.jpg",
+      "price": "2000",
+      "description": "Classic ethnic anarkali with comfortable fit and graceful silhouette. Great for casual celebrations.",
+      "category": "ethnic"
+    },
+    {
+      "id": 7,
+      "title": "Designer Blouse",
+      "tags": ["Blouse", "Custom"],
+      "image": "https://res.cloudinary.com/dh9uxczld/image/upload/v1763721449/designer-blouse_wfikgz.png",
+      "price": "1500",
+      "description": "Custom designer blouse with intricate patterns and premium fabric. Pairs perfectly with any saree.",
+      "category": "designer"
+    },
+    {
+      "id": 8,
+      "title": "Bridal Dupatta",
+      "tags": ["Bridal", "Accessory"],
+      "image": "https://res.cloudinary.com/dh9uxczld/image/upload/v1763638853/IMG-20251120-WA0041_khfzh9.jpg",
+      "price": "2000",
+      "description": "Beautiful bridal dupatta with exquisite zari and embroidery work. The perfect finishing touch for your bridal ensemble.",
+      "category": "bridal"
+    }
+  ]
+}

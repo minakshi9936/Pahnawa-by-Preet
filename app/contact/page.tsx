@@ -20,8 +20,23 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    console.log('Form submitted:', formData)
-    alert('Thank you for your inquiry! We will get back to you soon.')
+    
+    const whatsappNumber = '919569151037'
+    const messageText = `Hello Pahnawa By Preets,
+
+I would like to inquire about your services. Here are my details:
+
+Name: ${formData.name}
+Phone: ${formData.phone}
+Email: ${formData.email}
+Service: ${formData.service}
+
+Message: ${formData.message}`
+
+    const encodedMessage = encodeURIComponent(messageText)
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`
+    
+    window.open(whatsappUrl, '_blank')
     setFormData({ name: '', phone: '', email: '', service: '', message: '' })
   }
 
@@ -29,21 +44,21 @@ export default function Contact() {
     <>
       <Navbar />
 
-      <section className="bg-gradient-to-b from-gray-900 to-gray-800 text-white py-16">
+      <section className="bg-gradient-to-b from-pink-900 to-pink-300 text-white py-8 sm:py-12 md:py-16">
         <div className="container max-w-7xl mx-auto px-4">
-          <h1 className="text-5xl font-bold mb-4">Get In Touch</h1>
-          <p className="text-xl text-gray-300">We&apos;d love to hear from you. Reach out anytime!</p>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Get In Touch</h1>
+          <p className="text-base sm:text-lg md:text-xl text-gray-300">We&apos;d love to hear from you. Reach out anytime!</p>
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      <section className="py-12 sm:py-16 md:py-20 bg-white">
         <div className="container max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-12">
             <div className="lg:col-span-2">
-              <h2 className="text-3xl font-bold text-[#8B3A62] mb-8">Send Us a Message</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#8B3A62] mb-6 sm:mb-8">Send Us a Message</h2>
               
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                   <div>
                     <label className="block text-sm font-semibold text-[#8B3A62] mb-2">Full Name</label>
                     <input
@@ -120,47 +135,47 @@ export default function Contact() {
             </div>
 
             <div>
-              <h2 className="text-3xl font-bold text-[#8B3A62] mb-8">Contact Information</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#8B3A62] mb-6 sm:mb-8">Contact Information</h2>
 
-              <div className="space-y-8">
+              <div className="space-y-6 sm:space-y-8">
                 <div>
-                  <h3 className="font-bold text-[#8B3A62] mb-2 flex items-center">
-                    <span className="text-2xl mr-3">📍</span>
+                  <h3 className="font-bold text-[#8B3A62] mb-2 flex items-center text-sm sm:text-base">
+                    <span className="text-xl sm:text-2xl mr-3">📍</span>
                     Location
                   </h3>
-                  <p className="text-gray-600">Shop No 225 Sahara Plaza Patrakarpuram Gomti Nagar Lucknow 226010, Lucknow</p>
+                  <p className="text-sm sm:text-base text-gray-600">Shop No 225 Sahara Plaza Patrakarpuram Gomti Nagar Lucknow 226010, Lucknow</p>
                 </div>
 
                 <div>
-                  <h3 className="font-bold text-[#8B3A62] mb-2 flex items-center">
-                    <span className="text-2xl mr-3">📱</span>
+                  <h3 className="font-bold text-[#8B3A62] mb-2 flex items-center text-sm sm:text-base">
+                    <span className="text-xl sm:text-2xl mr-3">📱</span>
                     Phone
                   </h3>
-                  <p className="text-gray-600">+919569151037</p>
-                  <p className="text-gray-600">+916306183542</p>
+                  <p className="text-sm sm:text-base text-gray-600">+919569151037</p>
+                  <p className="text-sm sm:text-base text-gray-600">+916306183542</p>
                 </div>
 
                 <div>
-                  <h3 className="font-bold text-[#8B3A62] mb-2 flex items-center">
-                    <span className="text-2xl mr-3">📧</span>
+                  <h3 className="font-bold text-[#8B3A62] mb-2 flex items-center text-sm sm:text-base">
+                    <span className="text-xl sm:text-2xl mr-3">📧</span>
                     Email
                   </h3>
-                  <p className="text-gray-600">9918196565preetibagga@gmail.com</p>
+                  <p className="text-sm sm:text-base text-gray-600 break-words">9918196565preetibagga@gmail.com</p>
                   
                 </div>
 
                 <div>
-                  <h3 className="font-bold text-[#8B3A62] mb-2 flex items-center">
-                    <span className="text-2xl mr-3">🕐</span>
+                  <h3 className="font-bold text-[#8B3A62] mb-2 flex items-center text-sm sm:text-base">
+                    <span className="text-xl sm:text-2xl mr-3">🕐</span>
                     Working Hours
                   </h3>
-                  <p className="text-gray-600">Monday - Sunday</p>
-                  <p className="text-gray-600">10:00 AM - 8:00 PM</p>
+                  <p className="text-sm sm:text-base text-gray-600">Monday - Sunday</p>
+                  <p className="text-sm sm:text-base text-gray-600">10:00 AM - 8:00 PM</p>
                 </div>
 
-                <div className="bg-[#D66B7F] text-white rounded-lg p-6 text-center">
-                  <p className="font-semibold mb-2">Special Hours</p>
-                  <p className="text-sm">Bridal Consultations Available on Weekends</p>
+                <div className="bg-[#D66B7F] text-white rounded-lg p-4 sm:p-6 text-center">
+                  <p className="font-semibold mb-2 text-sm sm:text-base">Special Hours</p>
+                  <p className="text-xs sm:text-sm">Bridal Consultations Available on Weekends</p>
                 </div>
               </div>
             </div>
@@ -168,15 +183,20 @@ export default function Contact() {
         </div>
       </section>
 
-      <section className="py-16 bg-gray-50">
+      <section className="py-8 sm:py-12 md:py-16 bg-gray-50">
         <div className="container max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 text-[#8B3A62]">Map</h2>
-          <div className="w-full h-96 rounded-lg overflow-hidden border border-gray-200 bg-gray-200 flex items-center justify-center">
-            <div className="text-center text-gray-600">
-              <div className="text-6xl mb-4">🗺️</div>
-              <p className="font-semibold">Map Placeholder</p>
-              <p className="text-sm">Boutique Location Map</p>
-            </div>
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12 text-[#8B3A62]">Map</h2>
+          <div className="w-full rounded-lg overflow-hidden border border-gray-200">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d113948.87253788297!2d80.7513878972656!3d26.811240399999992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399be3f053249101%3A0x1481d7ed90c687cb!2sPahnawa%20By%20Preets!5e0!3m2!1sen!2sin!4v1763796512922!5m2!1sen!2sin" 
+              width="100%" 
+              height="450" 
+              style={{ border: 0 }}
+              allowFullScreen={true}
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+              className="rounded-lg"
+            />
           </div>
         </div>
       </section>

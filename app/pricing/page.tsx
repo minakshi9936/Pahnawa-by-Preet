@@ -1,5 +1,8 @@
+
+
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import CTA from '@/components/sections/CTA'
 
 export default function Pricing() {
   {/* const pricingPlans = [
@@ -65,10 +68,10 @@ export default function Pricing() {
     <>
       <Navbar />
 
-      <section className="bg-gradient-to-b from-gray-900 to-gray-800 text-white text-center py-16">
+      <section className="bg-gradient-to-b from-pink-900 to-pink-300 text-white  py-8 sm:py-12 md:py-16">
         <div className="container max-w-7xl mx-auto px-4">
-          <h1 className="text-5xl font-bold mb-4">Transparent Pricing</h1>
-          <p className="text-xl text-gray-300">Affordable luxury without hidden charges</p>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Transparent Pricing</h1>
+          <p className="text-base sm:text-lg md:text-xl text-gray-300">Affordable luxury without hidden charges</p>
         </div>
       </section>
 
@@ -121,50 +124,50 @@ export default function Pricing() {
         </div>
       </section> */}
 
-      <section className="py-20 bg-gray-50">
+      <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
         <div className="container max-w-7xl mx-auto px-4">
-          <h2 className="section-title">Service-wise Pricing</h2>
+          <h2 className="section-title text-2xl sm:text-3xl md:text-4xl">Service-wise Pricing</h2>
 
           <div className="overflow-x-auto">
-            <table className="w-full">
+            <table className="w-full text-sm sm:text-base">
               <thead>
                 <tr className="bg-[#8B3A62] text-white">
-                  <th className="px-6 py-4 text-left font-semibold">Service</th>
-                  <th className="px-6 py-4 text-left font-semibold">Pricing</th>
+                  <th className="px-3 sm:px-6 py-3 sm:py-4 text-left font-semibold">Service</th>
+                  <th className="px-3 sm:px-6 py-3 sm:py-4 text-left font-semibold">Pricing</th>
                 </tr>
               </thead>
               <tbody>
                 {services.map((item, index) => (
                   <tr key={index} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
-                    <td className="px-6 py-4 text-gray-800">{item.service}</td>
-                    <td className="px-6 py-4 text-[#D66B7F] font-semibold">{item.price}</td>
+                    <td className="px-3 sm:px-6 py-3 sm:py-4 text-gray-800">{item.service}</td>
+                    <td className="px-3 sm:px-6 py-3 sm:py-4 text-[#D66B7F] font-semibold">{item.price}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
 
-          <div className="mt-12 bg-white rounded-lg p-8 border border-gray-200">
-            <h3 className="text-2xl font-bold text-[#8B3A62] mb-4">📌 Pricing Notes</h3>
-            <ul className="space-y-3 text-gray-600">
+          <div className="mt-8 sm:mt-12 bg-white rounded-lg p-6 sm:p-8 border border-gray-200">
+            <h3 className="text-xl sm:text-2xl font-bold text-[#8B3A62] mb-4">📌 Pricing Notes</h3>
+            <ul className="space-y-3 text-sm sm:text-base text-gray-600">
               <li className="flex items-start">
-                <span className="text-[#D66B7F] mr-3 font-bold">•</span>
+                <span className="text-[#D66B7F] mr-3 font-bold flex-shrink-0">•</span>
                 <span>All prices are indicative and may vary based on design complexity, fabric quality, and customization level</span>
               </li>
               <li className="flex items-start">
-                <span className="text-[#D66B7F] mr-3 font-bold">•</span>
+                <span className="text-[#D66B7F] mr-3 font-bold flex-shrink-0">•</span>
                 <span>Bridal packages include multiple fittings and adjustments</span>
               </li>
               <li className="flex items-start">
-                <span className="text-[#D66B7F] mr-3 font-bold">•</span>
+                <span className="text-[#D66B7F] mr-3 font-bold flex-shrink-0">•</span>
                 <span>Rush delivery charges apply for orders requiring faster turnaround</span>
               </li>
               <li className="flex items-start">
-                <span className="text-[#D66B7F] mr-3 font-bold">•</span>
+                <span className="text-[#D66B7F] mr-3 font-bold flex-shrink-0">•</span>
                 <span>Fabric charges are separate from tailoring charges</span>
               </li>
               <li className="flex items-start">
-                <span className="text-[#D66B7F] mr-3 font-bold">•</span>
+                <span className="text-[#D66B7F] mr-3 font-bold flex-shrink-0">•</span>
                 <span>Group orders and bulk inquiries get special discounts</span>
               </li>
             </ul>
@@ -172,31 +175,44 @@ export default function Pricing() {
         </div>
       </section>
 
-      <section className="py-16 bg-white">
+      <section className="py-12 sm:py-16 md:py-20 bg-white">
         <div className="container max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 text-[#8B3A62]">Payment & Booking Process</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12 text-[#8B3A62]">Payment & Booking Process</h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {[
               { step: '1. Consultation', desc: 'Meet our designers and discuss your requirements' },
               { step: '2. Quote & Payment', desc: 'Receive detailed quote and make advance payment' },
               { step: '3. Creation & Delivery', desc: 'Your garment is created and delivered on time' }
             ].map((item, idx) => (
               <div key={idx} className="text-center">
-                <div className="w-16 h-16 bg-[#D66B7F] text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 bg-[#D66B7F] text-white rounded-full flex items-center justify-center text-xl sm:text-2xl font-bold mx-auto mb-4">
                   {item.step.split('.')[0]}
                 </div>
-                <h3 className="font-bold text-[#8B3A62] mb-2">{item.step}</h3>
-                <p className="text-gray-600">{item.desc}</p>
+                <h3 className="font-bold text-[#8B3A62] mb-2 text-sm sm:text-base">{item.step}</h3>
+                <p className="text-sm sm:text-base text-gray-600">{item.desc}</p>
               </div>
             ))}
           </div>
 
-          <div className="mt-12 text-center">
-            <button className="btn-primary">Get a Free Quote</button>
-          </div>
+        {/*  <div className="mt-8 sm:mt-12 text-center">
+            <button 
+              className="btn-primary text-sm sm:text-base"
+              onClick={() => {
+                const phoneNumber = "919569151037";
+                const message = "Hello! I'm interested in your services at Pahnawa By Preets. I'd like to get a free quote for custom tailoring. Could you please help me with more details?";
+                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+                window.open(whatsappUrl, "_blank");
+              }}
+            >
+              Get a Free Quote
+            </button>
+          </div> */}
+          
         </div>
+       
       </section>
+       <CTA />
 
       <Footer />
     </>

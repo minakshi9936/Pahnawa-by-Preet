@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
+import designsData from '@/public/data/designs.json'
 
 export default function FeaturedDesignsCarousel() {
   const [activeCategory, setActiveCategory] = useState('All')
@@ -9,16 +10,7 @@ export default function FeaturedDesignsCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [selectedDesign, setSelectedDesign] = useState<any>(null)
 
-  const designs = [
-    { title: 'Royal Bridal Lehenga', tags: ['Bridal', 'Ethnic'], image: 'https://res.cloudinary.com/dh9uxczld/image/upload/v1763719670/royal-bridal-lehenga_rr1pjv.png', price: '25000', description: 'Exquisite royal bridal lehenga crafted with traditional embroidery and zari work. Perfect for your special day with luxurious fabric and intricate detailing.' },
-    { title: 'Light Weight Lehenga', tags: ['Fusion', 'Ethnic'], image: 'https://res.cloudinary.com/dh9uxczld/image/upload/v1763638854/IMG-20251120-WA0038_p7jgqz.jpg', price: '2500', description: 'Comfortable and stylish lightweight lehenga perfect for festivals and celebrations. Features fusion design with modern cuts.' },
-    { title: 'Modern Fusion Suit', tags: ['Fusion', 'Contemporary'], image: 'https://res.cloudinary.com/dh9uxczld/image/upload/v1763638853/IMG-20251120-WA0042_byg6lz.jpg', price: '1500', description: 'Contemporary fusion suit blending traditional and modern aesthetics. Ideal for casual gatherings and parties.' },
-    { title: 'Western Dresses', tags: ['Western', 'Custom'], image: 'https://res.cloudinary.com/dh9uxczld/image/upload/v1763638854/IMG-20251120-WA0040_ws3gxa.jpg', price: '5000', description: 'Elegant western dresses custom tailored to your preferences. Available in various styles and sizes.' },
-    { title: 'Party Wear Gown', tags: ['Western', 'Party'], image: 'https://res.cloudinary.com/dh9uxczld/image/upload/v1763638854/IMG-20251120-WA0040_ws3gxa.jpg', price: '5000', description: 'Stunning party gown with elegant draping and sophisticated design. Perfect for evening events.' },
-    { title: 'Ethnic Anarkali', tags: ['Ethnic', 'Casual'], image: 'https://res.cloudinary.com/dh9uxczld/image/upload/v1763638853/IMG-20251120-WA0041_khfzh9.jpg', price: '2000', description: 'Classic ethnic anarkali with comfortable fit and graceful silhouette. Great for casual celebrations.' },
-    { title: 'Designer Blouse', tags: ['Blouse', 'Custom'], image: 'https://res.cloudinary.com/dh9uxczld/image/upload/v1763721449/designer-blouse_wfikgz.png', price: '1500', description: 'Custom designer blouse with intricate patterns and premium fabric. Pairs perfectly with any saree.' },
-    { title: 'Bridal Dupatta', tags: ['Bridal', 'Accessory'], image: 'https://res.cloudinary.com/dh9uxczld/image/upload/v1763638853/IMG-20251120-WA0041_khfzh9.jpg', price: '2000', description: 'Beautiful bridal dupatta with exquisite zari and embroidery work. The perfect finishing touch for your bridal ensemble.' },
-  ]
+  const designs = designsData.designs
 
   const categories = ['All', 'Bridal', 'Ethnic', 'Traditional', 'Contemporary', 'Party', 'Casual']
 
@@ -26,7 +18,20 @@ export default function FeaturedDesignsCarousel() {
     ? designs 
     : designs.filter(design => design.tags.some(tag => tag.toLowerCase() === activeCategory.toLowerCase()))
 
-  const cardsPerView = 3
+  const [isSmallScreen, setIsSmallScreen] = useState(false)
+  const [isMediumScreen, setIsMediumScreen] = useState(false)
+  
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth < 768)
+      setIsMediumScreen(window.innerWidth < 1024)
+    }
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
+  const cardsPerView = isSmallScreen ? 1 : isMediumScreen ? 2 : 3
 
   useEffect(() => {
     if (isPaused) return
@@ -43,7 +48,7 @@ export default function FeaturedDesignsCarousel() {
       <div className="container max-w-7xl mx-auto px-4">
         <h2 className="section-title">Featured Designs</h2>
         
-        <div className="mb-8 flex gap-2 justify-center flex-wrap pb-2">
+        <div className="mb-8 flex gap-2 justify-center flex-wrap pb-2 px-2">
           {categories.map((category) => (
             <button
               key={category}
@@ -51,7 +56,7 @@ export default function FeaturedDesignsCarousel() {
                 setActiveCategory(category)
                 setCurrentIndex(0)
               }}
-              className={`px-4 py-2 rounded-full font-semibold transition-all duration-300 ${
+              className={`px-3 sm:px-4 py-2 rounded-full font-semibold text-sm sm:text-base transition-all duration-300 ${
                 activeCategory === category
                   ? 'bg-[#D66B7F] text-white'
                   : 'bg-white text-[#8B3A62] border border-[#D66B7F] hover:bg-gray-100'
@@ -73,9 +78,9 @@ export default function FeaturedDesignsCarousel() {
                 transform: `translateX(-${Math.floor(currentIndex / cardsPerView) * 100}%)`
               }}>
               {filteredDesigns.map((design, index) => (
-                <div key={index} className="w-1/3 flex-shrink-0 px-4">
+                <div key={index} className={`${isSmallScreen ? 'w-full' : isMediumScreen ? 'w-1/2' : 'w-1/3'} flex-shrink-0 px-2 sm:px-4`}>
                   <div className="rounded-lg overflow-hidden bg-white border border-gray-200 hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer h-full">
-                    <div className="relative w-full h-64">
+                    <div className="relative w-full h-48 sm:h-56 md:h-64">
                       <Image 
                         src={design.image} 
                         alt={design.title}
@@ -102,13 +107,13 @@ export default function FeaturedDesignsCarousel() {
 
           <button
             onClick={() => setCurrentIndex((prev) => (prev - cardsPerView + filteredDesigns.length) % filteredDesigns.length)}
-            className="absolute left-0 top-1/3 -translate-y-1/2 bg-[#af0353] hover:bg-black text-[#D66B7F] w-10 h-10 rounded-full flex items-center justify-center transition-all z-10"
+            className="absolute left-0 top-1/3 -translate-y-1/2 -translate-x-2 sm:-translate-x-3 md:-translate-x-4 bg-[#af0353] hover:bg-black text-[#D66B7F] w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center transition-all z-10 text-sm sm:text-base"
           >
             ❮
           </button>
           <button
             onClick={() => setCurrentIndex((prev) => (prev + cardsPerView) % filteredDesigns.length)}
-            className="absolute right-0 top-1/3 -translate-y-1/2 bg-[#af0353] hover:bg-black text-[#D66B7F] w-10 h-10 rounded-full flex items-center justify-center transition-all z-10"
+            className="absolute right-0 top-1/3 -translate-y-1/2 translate-x-2 sm:translate-x-3 md:translate-x-4 bg-[#af0353] hover:bg-black text-[#D66B7F] w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center transition-all z-10 text-sm sm:text-base"
           >
             ❯
           </button>
@@ -130,8 +135,8 @@ export default function FeaturedDesignsCarousel() {
       {selectedDesign && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
           <div className="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-            <div className="sticky top-0 bg-white flex justify-between items-center p-6 border-b">
-              <h2 className="text-2xl font-bold text-[#8B3A62]">{selectedDesign.title}</h2>
+            <div className="sticky top-0 bg-white flex justify-between items-center p-4 sm:p-6 border-b">
+              <h2 className="text-lg sm:text-2xl font-bold text-[#8B3A62]">{selectedDesign.title}</h2>
               <button 
                 onClick={() => setSelectedDesign(null)}
                 className="text-gray-500 hover:text-gray-700 text-2xl font-bold"

@@ -10,17 +10,17 @@ export default function Hero() {
   }
 
   return (
-    <section className="relative w-full h-70 md:h-86 lg:h-screen bg-contain overflow-hidden">
+    <section className="relative w-full h-64 sm:h-80 md:h-96 lg:h-screen bg-contain overflow-hidden">
       <HeroSlider />
       <div className="absolute inset-0 bg-black/30"></div>
-      <div className="absolute inset-0 flex flex-col items-center justify-center px-4">
-        <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight text-center max-w-4xl">
+      <div className="absolute inset-0 flex flex-col items-center justify-center px-4 py-8 sm:py-12">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight text-center max-w-4xl">
           Your Partner in Exceptional <span className="text-[#af0353]">Experiences</span>
         </h1>
-        <p className="text-xl md:text-2xl text-white mb-8 text-center max-w-3xl">
+        <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white mb-6 sm:mb-8 text-center max-w-3xl">
           Boutique, Stitching & Designing Services Crafted Uniquely for You
         </p>
-        <button className="btn-primary" onClick={handleBookAppointment}>Book Appointment</button>
+        <button className="btn-primary text-sm sm:text-base" onClick={handleBookAppointment}>Book Appointment</button>
       </div>
     </section>
   )

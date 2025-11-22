@@ -16,6 +16,16 @@ export default function Testimonials() {
   ]
 
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [isSmallScreen, setIsSmallScreen] = useState(false)
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth < 640)
+    }
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -25,8 +35,9 @@ export default function Testimonials() {
   }, [testimonials.length])
 
   const getVisibleTestimonials = () => {
+    const cardsToShow = isSmallScreen ? 1 : 3
     const visible = []
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < cardsToShow; i++) {
       visible.push(testimonials[(currentIndex + i) % testimonials.length])
     }
     return visible
@@ -41,17 +52,17 @@ export default function Testimonials() {
   }
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-12 sm:py-16 md:py-20 bg-white">
       <div className="container max-w-7xl mx-auto px-4">
-        <h2 className="section-title">Customer Testimonials</h2>
+        <h2 className="section-title text-2xl sm:text-3xl md:text-4xl">Customer Testimonials</h2>
         
         <div className="relative">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className={`grid gap-4 sm:gap-6 md:gap-8 ${isSmallScreen ? 'grid-cols-1' : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'}`}>
             {getVisibleTestimonials().map((testimonial, index) => (
               <div key={index} className="bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-lg p-8 hover:shadow-lg hover:scale-105 hover:-translate-y-2 transition-all duration-300 cursor-pointer">
                 <div className="flex mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <span key={i} className="text-[#D66B7F] text-xl">★</span>
+                    <span key={i} className="text-[#D66B7F] text-2xl sm:text-xl">★</span>
                   ))}
                 </div>
                 <p className="text-gray-600 mb-6 italic">&quot;{testimonial.text}&quot;</p>
@@ -62,7 +73,7 @@ export default function Testimonials() {
 
           <button
             onClick={handlePrev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-12 bg-[#8B3A62] text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-[#D66B7F] transition-colors"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 sm:-translate-x-4 md:-translate-x-8 lg:-translate-x-12 bg-[#8B3A62] text-white rounded-full w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center hover:bg-[#D66B7F] transition-colors text-sm sm:text-base"
             aria-label="Previous testimonials"
           >
             ❮
@@ -70,19 +81,19 @@ export default function Testimonials() {
 
           <button
             onClick={handleNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-12 bg-[#8B3A62] text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-[#D66B7F] transition-colors"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 sm:translate-x-4 md:translate-x-8 lg:translate-x-12 bg-[#8B3A62] text-white rounded-full w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center hover:bg-[#D66B7F] transition-colors text-sm sm:text-base"
             aria-label="Next testimonials"
           >
             ❯
           </button>
 
           <div className="flex justify-center gap-2 mt-12">
-            {[...Array(Math.ceil(testimonials.length / 3))].map((_, i) => (
+            {[...Array(Math.ceil(testimonials.length / (isSmallScreen ? 1 : 3)))].map((_, i) => (
               <button
                 key={i}
-                onClick={() => setCurrentIndex(i * 3)}
+                onClick={() => setCurrentIndex(i * (isSmallScreen ? 1 : 3))}
                 className={`h-2 rounded-full transition-all ${
-                  i === Math.floor(currentIndex / 3)
+                  i === Math.floor(currentIndex / (isSmallScreen ? 1 : 3))
                     ? 'bg-[#8B3A62] w-8'
                     : 'bg-gray-300 w-2'
                 }`}
