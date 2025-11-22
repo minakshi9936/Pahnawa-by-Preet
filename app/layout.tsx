@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/pahnawaa.jpg',
+        url: '/pahnawa-logo.jpg',
         width: 800,
         height: 600,
         alt: 'Pahnawa By Preets Logo',
